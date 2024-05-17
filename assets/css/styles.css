@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Etiquetas */
+p {
+font-size: 1.5rem;
+}
+menu {
+    grid-area: menu;
+    background-color: rgb(42, 42, 216);
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(196, 195, 195);
+    text-align: center;
+    padding: 10px;
+}
+
+section {
+    grid-area: section;
+}
+
+footer {
+    grid-area: footer;
+    background-color: blue;
+    font-size: 1.5rem;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Clases */
+
+.gridMain {
+    display: grid;
+    grid-template-areas: 
+        "menu"
+        "nav"
+        "section"
+        "pp"
+        "footer";
+    height: 100vh;
+    grid-template-rows: auto auto 9fr 1fr auto;
+}
+.barra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 25px;
+    font-size: 2.5rem;
+}
+
+.Longboards {
+    display: flex;
+    gap: 1rem;
+}
+
+.oculto {
+display: none;
+}
+
+.buscador {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background-color: white;
+    margin: 15px;
+    padding: 10px;
+    
+}
+
+
+.flexSection {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    padding: 10px;
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 15px;
+    gap: 20px;
+    scroll-snap-type: y mandatory;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start; 
+    width: 100%; 
+    border: 1px grey solid;
+    padding-bottom: 10px;
+}
+
+.producto img {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+}
+.producto button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+.pp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; 
+    background-color:  rgb(196, 195, 195);
+grid-area: pp;
+}
+
+.pp button {
+    width: 2.5rem;
+    font-size: 1.5rem;
+    color: blue;
+    background-color: white;
+}
+
+.boton1 {
+    border-radius: 7px;
+}
+
+.botondr {
+    border-radius: 7px;
+}
+
+.rss {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Medias */
+@media (min-width:577px) {
+
+    .gridMain {
+        display: grid;
+        grid-template-areas: 
+            "menu menu"
+            "nav section"
+            "nav pp"
+            "footer footer "
+        ;
+        height: 100vh;
+        grid-template-rows: auto 8fr 1fr auto;
+        grid-template-columns: 1fr 10fr;
+    }
+    .hamburguesa {
+        display: none;
+    }
+
+    .productos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        height: 100%;
+
+    }
+
+    .producto {
+
+        width: 45%; 
+        text-align: center;
+
+    }
+
+    .oculto {
+        display: block;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+    }
+
+ }
+
+@media (min-width:993px) {
+    .gridMain {
+        display: grid;
+        grid-template-areas: 
+            "menu nav"
+            "menu section "
+            "footer pp "
+        ;
+        height: 100vh;
+        grid-template-rows: auto 8fr auto;
+        grid-template-columns: 1fr 10fr;
+    }
+    
+    .producto {
+
+        width: 20%; 
+        text-align: center;
+
+    }
+
+    .barra {
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .oculto {
+        flex-direction: column;
+        padding-top: 4rem;
+        align-items: center;
+        gap: 1rem;
+        
+    }
+}
